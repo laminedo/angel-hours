@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Angel Hours</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header class="intro">
+      <p class="eyebrow">Angel Hours</p>
+      <h1>What time did you see?</h1>
+      <p class="lede">Enter the number on the clock to read its meaning and what to do next.</p>
+    </header>
+
+    <form id="lookup" novalidate>
+      <label class="visually-hidden" for="time">Time on the clock</label>
+      <input id="time" type="text" inputmode="numeric" autocomplete="off" placeholder="11:11" maxlength="5" autofocus>
+      <div class="buttons">
+        <button type="submit" class="primary">Interpret</button>
+        <button type="button" id="now" class="secondary">Use current time</button>
+      </div>
+      <p id="error" class="error" role="alert"></p>
+    </form>
+
+    <section class="chip-group">
+      <h2>Often seen</h2>
+      <div id="popular" class="chips"></div>
+    </section>
+
+    <article id="result" class="result" hidden aria-live="polite"></article>
+
+    <section id="history" class="chip-group" hidden>
+      <div class="chip-head">
+        <h2>Your recent numbers</h2>
+        <button type="button" id="clear" class="link">Clear</button>
+      </div>
+      <div id="history-chips" class="chips"></div>
+    </section>
+
+    <footer>Angel numbers are a tradition of symbolic reflection, not prediction. Take what is useful.</footer>
+  </main>
+
+  <script src="meanings.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
